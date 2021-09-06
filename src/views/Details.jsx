@@ -3,7 +3,7 @@ import NavBar from "../components/Navbar";
 
 const Details = () => {
     return(
-        <div className="Search">
+        <div className="navContainer">
             <NavBar />
         </div>
     )
