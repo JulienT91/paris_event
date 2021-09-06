@@ -11,13 +11,13 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/favoris" activeClassName="nav-active">
-              Favoris
+            <NavLink exact to="/event" activeClassName="nav-active">
+              Liste des événements
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/event" activeClassName="nav-active">
-              Liste des événements
+            <NavLink exact to="/favorites" activeClassName="nav-active">
+              Favoris
             </NavLink>
           </li>
         </ul>

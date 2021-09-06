@@ -11,9 +11,8 @@ function App() {
   <Router basename="/paris_event/">
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/recherche" exact component={Search} />
-          <Route path="/favoris" component={Favorites} />
-          <Route path="/event" component={Details} />
+          <Route path="/event" exact component={Search} />
+          <Route path="/favorites" exact component={Favorites} />
         </Switch>
   </Router>
   );
