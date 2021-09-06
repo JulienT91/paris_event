@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../components/Navbar";
+import SearchCard from "../components/SearchCard";
 
 const Home = () => {
     return(
@@ -14,6 +15,7 @@ const Home = () => {
             <div className="news">
                 <h2>Actualités</h2>
                 <p>Les derniers événements publié :</p>
+                <SearchCard />
             </div>
         </div>
     )
