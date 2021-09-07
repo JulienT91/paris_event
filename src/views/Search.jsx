@@ -10,8 +10,8 @@ const Search = () => {
             <div className="searchBar">
                 <h1>Lister des futurs événements à Paris</h1>
                 <form>
-                    <input name="searchBar" type="text"></input>
-                    <button type="submit">Rechercher</button>
+                    <input type="text" placeholder="Rechercher un événement" id="SearchInput"></input>
+                    <button type="submit" id="SubmitBtn">Rechercher</button>
                 </form>
             </div>
         </main>
