@@ -19,7 +19,7 @@ const Search = () => {
         .then((response) => {
             setQuery(response.records)
             console.log(response.records)
-        }
+         }
         )
     }
     return(
@@ -34,7 +34,9 @@ const Search = () => {
                      <button type="button" name="search" onClick={displayResult}>Rechercher</button>
                  </div>
                 </form>
-                <div></div>
+                <div>
+                    
+                </div>
             </div>
         </main>
     )
