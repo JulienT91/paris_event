@@ -1,8 +1,19 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import NavBar from "../components/Navbar";
-import LatestCard from "../components/LatestCard";
+import CardEvent from "../components/CardEvent";
+
 
 const Home = () => {
+    const [Events, setEventStorage] = useState([]);
+    useEffect(() => {
+        fetch("https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?order_by=title%20asc%2Cdate_end%20desc&limit=10&pretty=false&timezone=UTC")
+        .then((result) => result.json()).then((response) => setEventStorage(response.records))
+    },[]);
+
+    useEffect(() => {
+        console.log(Events);
+    },[Events]);
+
     return(
         <div className="home">
             <div className="navContainer">
@@ -15,8 +26,10 @@ const Home = () => {
             <div className="news">
                 <h2>Actualités</h2>
                 <p>Les derniers événements publié :</p>
-                <LatestCard/>
-            </div>
+                <div className="card-content">
+                    {Events && Events.map((event) => (<CardEvent event={event.record.fields} key={event.record.id}/>))}
+                </div>
+            </div> 
         </div>
     )
 }

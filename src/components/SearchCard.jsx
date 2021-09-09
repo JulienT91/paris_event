@@ -1,10 +1,13 @@
 import React from "react";
 
-const SearchCard = () => {
+function SearchCard ({data}){
     return(
     <>
-        
+        <div className="searchResults">
+            
+        </div>
     </>
+    
     );
 }
 export default SearchCard;

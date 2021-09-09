@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
-      <nav className="navigation">
-        <ul>
+      <nav>
+        <ul className="navigation">
           <li>
             <NavLink exact to="/" activeClassName="nav-active">
               Accueil

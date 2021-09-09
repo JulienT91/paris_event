@@ -7,7 +7,6 @@ import Details from "./views/Details";
 import './App.css';
 
 function App () {
- 
   return (
   <Router basename="/paris_event/">
         <Switch>
