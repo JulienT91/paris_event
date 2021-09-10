@@ -27,7 +27,7 @@ const Home = () => {
                 <h2>Actualités</h2>
                 <p>Les derniers événements publié :</p>
                 <div className="card-content">
-                    {Events && Events.map((event) => (<CardEvent event={event.record.fields} key={event.record.id}/>))}
+                    {Events && Events.map((event) => (<CardEvent event={event.record.fields} key={event.record.id} id={event.record.id}/>))}
                 </div>
             </div> 
         </div>

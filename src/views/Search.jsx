@@ -1,40 +1,42 @@
-import React ,{useState,useEffect}from "react";
+import React ,{useState}from "react";
 import SearchCard from "../components/SearchCard";
 import NavBar from "../components/Navbar";
 
 const Search = () => {
     const [allData, setAllData] = useState([]);
-    const [query, setQuery] = useState('');
-    useEffect(() => {
-        fetch("https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?order_by=title%20asc%2Cdate_end%20desc&limit=10&pretty=false&timezone=UTC")
-        .then((result) => result.json()).then((response) => setAllData(response.records))
-    },[]);
-    
-    const setQueryValue = (e) => {
-        setQuery(e.target.value);
+
+    const [searchVal, setsearchVal] = useState("");
+    // fetch all the data here
+    const setQuerySearch = (e) => {
+        setsearchVal(e.target.value);
     }
-     const displayResult = () => {
-        fetch(`https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?search=${query}`)
+
+     const displayResult = (e) => {
+         
+        e.preventDefault();
+        fetch(`https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records?search=${searchVal}`)
         .then((result) => result.json())
         .then((response) => {
-            setQuery(response.records)
-            console.log(response.records)
-         }
-        )
-    }
+        setAllData(response.records);
+    });
+}
+
     return(
         <main className="Search">
             <div className="navContainer">
                 <NavBar />
             </div>
             <div className="search">
-                <form className="input">
+                <form className="input" onSubmit={displayResult} action="/">
                 <div className="searchBar">
-                     <input type="text" name="searchBar" id="searchBar" onInput={setQueryValue} placeholder="rechercher un événement" />
-                     <button type="button" name="search" onClick={displayResult}>Rechercher</button>
+                     <input type="text" name="searchBar" id="searchBar" onInput={setQuerySearch} placeholder="rechercher un événement" />
+                     <button type="submit" name="search" >Rechercher</button>
                  </div>
                 </form>
-                <div>
+                <div className="card-cont">
+                    {allData && 
+                         allData.map((event) =>
+                         (<SearchCard key={event.record.id} id={event.record.id} event={event.record.fields} />))}
                     
                 </div>
             </div>
