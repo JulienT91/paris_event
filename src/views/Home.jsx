@@ -1,5 +1,4 @@
 import React, {useEffect,useState} from "react";
-import NavBar from "../components/Navbar";
 import CardEvent from "../components/CardEvent";
 
 
@@ -16,9 +15,6 @@ const Home = () => {
 
     return(
         <div className="home">
-            <div className="navContainer">
-                <NavBar />
-            </div>
             <div className="title">
                 <h1>Bienvenue sur Paris Events</h1>
                 <p>L'application qui permets de rechercher en direct les prochains événements Parisiens</p>

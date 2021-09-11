@@ -1,6 +1,5 @@
 import React ,{useState}from "react";
 import SearchCard from "../components/SearchCard";
-import NavBar from "../components/Navbar";
 
 const Search = () => {
     const [allData, setAllData] = useState([]);
@@ -22,22 +21,19 @@ const Search = () => {
 }
 
     return(
-        <main className="Search">
-            <div className="navContainer">
-                <NavBar />
-            </div>
+        <main className="Search-container">
             <div className="search">
-                <form className="input" onSubmit={displayResult} action="/">
+                <form className="input" onSubmit={displayResult} action="/" >
                 <div className="searchBar">
-                     <input type="text" name="searchBar" id="searchBar" onInput={setQuerySearch} placeholder="rechercher un événement" />
+                     <input type="text" name="searchBar" autoComplete="off" id="searchBar" onInput={setQuerySearch} placeholder="rechercher un événement" />
                      <button type="submit" name="search" >Rechercher</button>
                  </div>
                 </form>
                 <div className="card-cont">
+                <h2>Résultat de la recherche :</h2>
                     {allData && 
-                         allData.map((event) =>
-                         (<SearchCard key={event.record.id} id={event.record.id} event={event.record.fields} />))}
-                    
+                     allData.map((event) =>
+                    (<SearchCard key={event.record.id} id={event.record.id} event={event.record.fields} />))}
                 </div>
             </div>
         </main>

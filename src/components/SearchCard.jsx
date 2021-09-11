@@ -2,37 +2,32 @@ import React from "react";
 import ReactHtmlParser from 'react-html-parser';
 import DateFunction from "../services/DateFunction";
 import { Link } from "react-router-dom";
-
+import FavBtn from "./FavBtn";
 
 function CardEvent({event,id}) {
 const eventDate = event.date_start;
 return(
 <div className="card-body">
     <div className="card-img">
-        <h2>Résultat de la recherche :</h2>
         <figure>
             <figcaption>
-            <Link to={{ pathname: "/event", search: `${id}` }}>
+            <Link to={{ pathname: "/details", search: `${id}` }}>
                     <h3 className="title-small">{event.title}</h3>
             </Link>
             </figcaption>
-            <img src={event.cover_url} alt="Cover-img" />
+            <img src={event.cover_url} alt={event.cover_alt} />
         </figure>
     </div>
         <div className="card-desc">
             <div className="media">
                 <div className="media-content">
-                    <h3>{event.title}</h3>
                         <p>{DateFunction.DateForm(eventDate)}</p>
                 </div>
             </div>
             <div className="content-desc">
-                {ReactHtmlParser(event.description)}
+                {ReactHtmlParser(event.lead_text)}
                     <br />
-                    <br />
-                <button className="like-btn red-heart">
-                    <span role="img" aria-label="like-btn"></span>
-                </button>
+                <FavBtn />
             </div>
      </div>
 </div>

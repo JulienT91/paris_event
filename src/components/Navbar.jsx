@@ -11,7 +11,7 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink exact to="/event" activeClassName="nav-active">
+            <NavLink exact to="/search" activeClassName="nav-active">
               Liste des événements
             </NavLink>
           </li>
