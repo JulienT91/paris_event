@@ -9,6 +9,7 @@ const FavoriteEvent = ({ id }) => {
   }, []);
 
   const detailsResults = () => {
+    // on fetch à nouveau les données en utilisant les données récupéré via l'id a l'aide de la props id 
     fetch(
       `https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-paris-/records/${id}`
     )
@@ -17,7 +18,7 @@ const FavoriteEvent = ({ id }) => {
         setEventDetails(response.record.fields);
       });
   };
-
+  // si EventDetails ne retourne rie alors je retourne un texte de chargement / sinon je charge mon composant
   if (!EventDetails) return <p>Loading ...</p>;
 
   return <div className="favorites-card">

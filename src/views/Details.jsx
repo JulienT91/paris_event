@@ -7,7 +7,7 @@ import { HiMail } from "react-icons/hi";
 import { CgWebsite } from "react-icons/cg";
 
 const Details = () => {
-  const id = useLocation().search.split("?")[1];
+  const id = useLocation().search.split("?")[1]; 
   const [EventDetails, setEventDetails] = useState(null);
   useEffect(() => {
     detailsResults();
@@ -21,7 +21,8 @@ const Details = () => {
         setEventDetails(response.record.fields);
       });
   };
-
+  // J'utilise html parser pour enlever les balises autour de la description
+  // 
   return (
     <div className="Details-home">
       <div className="Details-container">
@@ -68,7 +69,7 @@ const Details = () => {
                 </div>
                 <div>
                   <h3>En transport :</h3>
-                  <p>{ReactHtmlParser(EventDetails.transport)}</p>
+                  <p>{ReactHtmlParser(EventDetails.transport)}</p> 
                 </div>
                 <div>
                   <h3>Plus d'info</h3>
