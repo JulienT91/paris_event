@@ -15,14 +15,13 @@ const Home = () => {
 
     return(
         <div className="home">
-            <div className="title">
-                <h1>Bienvenue sur Paris Events</h1>
-                <p>L'application qui permets de rechercher en direct les prochains événements Parisiens</p>
-            </div>
             <div className="news">
-                <h2>Actualités</h2>
-                <p>Les derniers événements publié :</p>
-                <div className="card-content">
+                <div className="discover">
+                    <h2>Bienvenue sur Paris Event</h2>
+                    <p>L'application qui regroupe les derniers évenements Parisien</p>
+                </div>
+                <hr />
+                <div className="card-container">
                     {Events && Events.map((event) => (<CardEvent event={event.record.fields} key={event.record.id} id={event.record.id}/>))}
                 </div>
             </div> 

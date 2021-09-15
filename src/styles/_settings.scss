@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
-$font-1: 'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+$font-1: 'Urbanist', sans-serif;
+$font-2: 'Dancing Script', 'cursive';
 
-$color-1: #76D7C4;
+$color-1: #071F32;
 $color-2: #f7f7f7;
 $color-3: #282c34;
 $color-4: rgb(32, 35, 42);
+$color-5: #F04C47;
+$color-6: #3498DB;
+$color-7: #fff;
 
 * {
   box-sizing: border-box;
@@ -12,24 +17,42 @@ $color-4: rgb(32, 35, 42);
   padding: 0;
 }
 body {
-  margin: 0.4rem auto;
+  margin: 0rem auto;
   max-width: 1296px;
   font-family: $font-1;
-  color: $color-3;
+  color: $color-6;
   background-color: $color-2;
-}
-li {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-  color: $color-3;
-  cursor: pointer;
-}
-a:visited {
-  color: $color-3;
-}
-img {
-    width: 100%;
-    height: auto;
+  h1 {
+    font-family: $font-2;
+    
+  }
+  
+  h3 {
+    color: $color-6;
+  }
+  .title-small {
+    text-align: center;
+    padding:1rem
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: $color-6;
+    cursor: pointer;
+  }
+  a:visited {
+    color: $color-6;
+  }
+  hr {
+    border: 4px solid $color-6;
+    border-radius: 5px;
+    margin: 1.5em;
+  }
+  img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+  }
 }

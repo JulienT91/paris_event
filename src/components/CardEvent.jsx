@@ -9,17 +9,17 @@ import { Link } from "react-router-dom";
 function CardEvent({event,id}) {
 const eventDate = event.date_start;
 return(
-<div className="card-body">
-    <div className="card-img">
+<div className="card-content">
         <figure>
             <figcaption>
             <Link to={{ pathname: "/details", search: `${id}` }}>
                     <h3 className="title-small">{event.title}</h3>
             </Link>
             </figcaption>
-            <img src={event.cover_url} alt={event.cover_alt} />
+            <div className="zoom_img">
+                <img src={event.cover_url} alt={event.cover_alt} className="card-img-transition" />
+            </div>
         </figure>
-    </div>
         <div className="card-desc">
             <div className="media">
                 <div className="media-content">

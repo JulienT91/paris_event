@@ -1,0 +1,32 @@
+
+.searchBar {
+display:flex;
+justify-content: center;
+padding: 3rem 0rem;
+
+    #searchBar {
+        border: 3px solid $color-6;
+        border-right: none;
+        padding: 5px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: $color-1;
+    }
+    #searchBar:focus {
+        color: $color-6;
+    }
+
+    #BtnSearch {
+        width: 40px;
+        height: 40px;
+        border: 1px solid $color-6;
+        background: $color-6;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+
+    }
+
+}

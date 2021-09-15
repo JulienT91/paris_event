@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect,useState}from "react";
+import FavBtn from "../components/FavBtn";
 
 const Favorites = () => {
     return(
         <div className="favorites">
             <div className="elementSave">
-                <h1>Événements sauvegardés</h1>
+                <h2>Événements sauvegardés</h2>
                 
             </div>
         </div>

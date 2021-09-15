@@ -1,13 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {AiTwotoneHome} from "react-icons/ai";
+
 
 const NavBar = () => {
     return (
+    <div className="navBar-container">
+      <h1>Paris Event</h1>
       <nav>
         <ul className="navigation">
           <li>
             <NavLink exact to="/" activeClassName="nav-active">
-              Accueil
+              <AiTwotoneHome/>Accueil
             </NavLink>
           </li>
           <li>
@@ -22,6 +26,7 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
+      </div>
     );
   };
   

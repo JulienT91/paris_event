@@ -1,5 +1,6 @@
 import React ,{useState}from "react";
 import SearchCard from "../components/SearchCard";
+import {GoSearch} from "react-icons/go";
 
 const Search = () => {
     const [allData, setAllData] = useState([]);
@@ -7,6 +8,7 @@ const Search = () => {
     const [searchVal, setsearchVal] = useState("");
     // fetch all the data here
     const setQuerySearch = (e) => {
+
         setsearchVal(e.target.value);
     }
 
@@ -25,12 +27,11 @@ const Search = () => {
             <div className="search">
                 <form className="input" onSubmit={displayResult} action="/" >
                 <div className="searchBar">
-                     <input type="text" name="searchBar" autoComplete="off" id="searchBar" onInput={setQuerySearch} placeholder="rechercher un événement" />
-                     <button type="submit" name="search" >Rechercher</button>
+                     <input type="text" name="searchBar" autoComplete="off" id="searchBar" onInput={setQuerySearch} placeholder="Recherche d'événéments?" />
+                     <button type="submit" name="search" id="BtnSearch" ><GoSearch/></button>
                  </div>
                 </form>
-                <div className="card-cont">
-                <h2>Résultat de la recherche :</h2>
+                <div className="card-container">
                     {allData && 
                      allData.map((event) =>
                     (<SearchCard key={event.record.id} id={event.record.id} event={event.record.fields} />))}
